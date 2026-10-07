@@ -10,7 +10,7 @@ source.exclude_dirs = bin,build,.git,__pycache__
 
 version = 1.3
 
-requirements = python3,kivy
+requirements = python3==3.13.11,hostpython3==3.13.11,kivy==2.3.1
 
 orientation = portrait
 fullscreen = 0
