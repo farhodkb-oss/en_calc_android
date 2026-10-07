@@ -5,6 +5,7 @@ on:
 
 env:
   PYTHONFORANDROID_PREREQUISITES_INSTALL_INTERACTIVE: 0
+  PIP_CONSTRAINT: ${{ github.workspace }}/constraints.txt
 
 jobs:
   build-android:
@@ -37,7 +38,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install buildozer cython
-
+          
+      - name: Create pip constraints
+        run: |
+          echo "pip<26" > constraints.txt
+          
       - name: Build APK
         run: |
           buildozer -v android debug
