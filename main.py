@@ -1,4 +1,3 @@
-__version__ = "1.3"
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
@@ -11,9 +10,10 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.graphics import Color, RoundedRectangle
 from kivy.metrics import dp
 from kivy.core.window import Window
+from kivy.utils import platform
 import math
 
-APP_VERSION = "1.3"
+APP_VERSION = "1.4"
 
 # -----------------------------
 # ТЕМА
@@ -29,7 +29,11 @@ SUCCESS = (0.22, 0.72, 0.48, 1)
 DANGER = (0.90, 0.31, 0.31, 1)
 
 Window.clearcolor = BG
-Window.size = (430, 760)
+
+# Размер окна задаём только на компьютере для удобства тестирования.
+# На Android Kivy должен использовать реальный размер экрана телефона.
+if platform not in ("android", "ios"):
+    Window.size = (430, 760)
 
 STANDARD_MOTORS = [
     0.55, 0.75, 1.1, 1.5, 2.2, 3, 4, 5.5, 7.5, 11,
