@@ -8,7 +8,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 source.exclude_dirs = bin,build,.git,__pycache__
 
-version = 1.3
+version = 1.4
 requirements = python3==3.11.13,hostpython3==3.11.13,kivy==2.3.1
 orientation = portrait
 fullscreen = 0
